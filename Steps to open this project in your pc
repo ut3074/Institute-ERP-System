@@ -1,0 +1,22 @@
+//Below are the steps for accessing the projects
+
+1.Firstly install xampp-windows-x64-8.0.28-0-VS16-installer from the web or using this link (https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.0.28/xampp-windows-x64-8.0.28-0-VS16-installer.exe).
+
+2.Next step is to open XAMPP Control Panel application and then start the Apache Server as well as the my sql application.
+
+3.After it go to chrome or any web browser you prefer and type localhost in the search bar.
+
+4.Next you will see inside the localhost page there is a phpMyadmin link next head towards it.
+
+5.After heading towards it you will be in this page having link (http://localhost/phpmyadmin/).Inside the page at the left there is an option to create a database.
+
+6.Click on it and type the name of database as frontendbackend. Here keep in mind that if you will change the name of the database you will have to change it in the project file as well.
+So,if you know where to change the names in project files as well then make a database accordingly else go with frontendbackend named database.
+
+7.After creating the database in the right you will find a column where it is written to import click on that and add the SQL file named admin being attached in the project folder.
+
+8.After importing the database next head towards C drive of your PC in it you will discover folder XAMPP inside it go to a folder named htdocs and paste the whole file being downloaded from github.
+
+7.Now for accessing this project on browser goto your browser and type http://localhost/frontendbackend/ and you will now be able to access the project.Now if you want to modify this project you can modify it accordingly in your pc.
+
+Thank you..

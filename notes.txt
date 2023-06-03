@@ -1,0 +1,562 @@
+our xampp see for our html files in (C:\xampp\htdocs)
+
+as we start our server http://localhost/dashboard/ is being displayed in browser which is taken from here 
+"C:\xampp\htdocs\dashboard\index.html"
+
+we can also write our own index and then it will be shown there.
+
+we can also execute this file "C:\xampp\htdocs\dashboard\phpinfo.php"
+by just writing file name after http://localhost/dashboard/
+like http://localhost/dashboard/phpinfo.php
+
+Now we will create a folder inside of htdocs 
+we have created index.php
+and inside it for starting a php code we write <?php
+and for printing a string we write 
+echo "string to be printed";(AFTER COMPLETION OF STRING WE WRITE SEMICOLON)
+?>
+(at the end we close our code from those tags)
+
+and for numbers we do not write any strings
+and we can also write HTML tags in those echo strings and they will work in same way as they work normally as HTML.
+so ultimately our code is like this
+e.g.
+<?php
+
+    echo "php rocks and will make us also rock";
+    echo 9;
+?>
+
+
+also we can integrate php inside of HTML like for e.g.
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+<?php 
+echo "This is title for heading page";
+?>
+</title>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+</body>
+</html>
+
+
+For adding HTML tag using php:
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+<?php echo
+"This is title for heading page";
+?>
+</title>
+</head>
+<body>
+
+<h1>My First Heading in PhP with addition of 7 and 9 which equals to <?php
+echo 7+9;
+?></h1>
+<?php
+$i=1;
+while($i<=10){
+    echo $i;
+    echo "<br>";                //IMP LINE TO BE NOTED//
+    $i++;
+}
+?>
+</body>
+</html>
+
+
+We can also do calculations using echo 
+
+e.g. 
+<?php
+echo 7+9;
+?>
+
+For declaring a variable we use,
+<?php
+$var_name= var_value;
+
+we don't need to declare datatype of variables before variable name.php automatically detects variable datatype .
+to see datatype we can use :
+var_dump($var_name);
+O/P : int(value_of_our_variable)
+
+also we can use this for datatype:
+echo gettype($var_name);
+O/P : integer  
+
+// Float //
+<?php
+$float = 4.2
+
+var_dump($float);
+O/P : float(4.2)
+
+
+//boolean:
+<?php
+$bool=True;
+
+var_dump($bool);
+
+O/P : bool(True)
+
+//string
+<?php
+$str="this is just a string";
+var_dump($str);
+O/P : string(character_of_str=21) "this is just a string"
+
+If a number is inside of quotes then it will be considered as string:
+e.g. : 
+<?php
+$str_2="99";
+
+var_dump($str_2);
+
+O/P : string(2)"99"
+
+For concatenation in string while printing we use (dot) .
+e.g. 
+$a="My name is ";
+$b="Sarthak";
+echo $a . $b;
+
+
+
+
+
+//Nulls
+<?php
+$var=null;
+var_dump($var);
+O/P : NULL 
+
+
+
+Comparison Operators
+== means equals
+=== means identical
+!= means not equals
+< means less than
+> means greater than
+
+For seeing result of comparison operator we will use var_dump:
+e.g.
+$x=8;
+$y=9;
+
+var_dump($x==$y);
+
+O/P : bool(False)
+
+Identical operator will compare whether two values are equal and of the same data type.
+e.g.
+$x=8;
+$y=9;
+
+var_dump($x==$y);
+var_dump($x===$y);
+
+O/P : bool(False)
+      bool(False)
+
+
+But if : two conditions
+1)
+$x=8;
+$y=8;
+
+var_dump($x==$y);
+var_dump($x===$y);
+
+O/P : bool(True)
+      bool(True)
+
+2)
+$x=8;
+$y=8.0;
+
+var_dump($x==$y);
+var_dump($x===$y);
+
+O/P : bool(True)
+      bool(False)
+
+
+//Increment Operators//:
+1)Pre-Increment
+<?php
+$x=9;
+?>
+<p>The value of x after pre-increment is<?php echo ++$x;?></p>
+<p>The value of x after pre-increment is<?php echo --$x;?></p> 
+?>
+2)Post-Increment
+<?php
+$x=9;
+<p>The value of x after post-increment is<?php echo $x++;?></p>
+<p>eThe value of x after post-increment is<?php echo $x--; ?></p>
+
+
+//Conditionals//
+1)
+if(condition)
+    action
+2)
+if(condition){
+    action
+    }
+else{
+    action
+}   
+3)
+if(condition){
+    action
+} 
+elseif(condition){
+    action
+}
+else{
+    action
+}
+//Switch Statement//
+switch(condition){
+    case "condition1":
+        action;
+        break;
+    case "condition2":
+        action;
+        break;
+    case "condition3":
+        action;
+        break;
+    case "condition4":
+        action;
+        break;
+    default:
+        action;
+        break;
+}
+e.g.:
+$favColor="black"
+switch($favColor){
+    case "blue":
+        echo "You like blue color";
+        break;
+    case "red":
+        echo "You like red color";
+        break;
+    case "green":
+        echo "You like green color";
+        break;
+    case "white":
+        echo "You like white color";
+        break;
+    default:
+        echo "You like another color";
+        break;
+}
+
+//Section 7 Loops
+
+//While//
+firstly initialization
+secondly condition
+and third is increment/decrement
+
+e.g. syntax:
+//the initialization;
+while(condition){
+    action;
+    increment/decrement;
+}
+
+
+
+//For Loop//
+for(initialization;condition;increment/decrement){
+    action;
+}
+
+//Section 8 Arrays//
+
+//Arrays and Indexed arrays//
+Array is a special kind of variable which lets us store multiple data inside of it.
+There are 3 kinds of array mainly
+1)Indexed
+2)Associative
+3)Multidimensional
+
+e.g. of creation of indexed array:
+first way of creating an array
+$users=array("jack","raj","mohan","rajan");
+
+second way of creating an indexed array
+$users=["jack","raj","mohan","rajan"];
+
+e.g. of accessing values from an array and then printing them:
+echo $users[0];
+O/P : jack
+
+//For counting values inside of an array we can use count function:
+echo count($arr_name)
+echo count($users)
+
+
+Associative Array
+
+For creating Associative Array:
+$array_name = ['key'=>'value','key'=>'value','key'=>'value'];
+
+and for accessing values we can by writing keys:
+echo $array_name['key'];
+
+For e.g.
+$age = ['sd' => 20, 'kirru' => 19, 'aditya' => '18'];
+echo $age['sd'];
+O/P : 20
+
+Now for accessing multiple values of Associative Array at same time we will use
+foreach loop
+e.g.
+foreach($arr_name($age) as $key => $value)
+{
+    echo "Name of candidate is " .$key . " age is " .$value;
+    echo"<br>";
+}
+
+
+
+//26.Multidimensional Arrays//
+These are those arrays which contain lot of arrays inside them.
+
+Used for storing millions and millions of records.
+
+e.g.
+$multi = array(
+//So this is 1st row// array('Java','C++','Python'),
+//So this is 2nd row// array('React','Django','Laravel'),
+//So this is 3rd row// array('MySQL','MongoDB','CouchDb')
+);
+
+now for accessing a particular element we can do by writing row and column no.
+Basic Syntax : $arr_name[row_no.][col_no.]
+
+like for e.g. if we want to print 'Laravel' then we can write like below:
+echo $multi[1][2];
+
+O/P :Laravel
+
+
+
+//SECTION 3
+//CONNECTING DATABASE AND CREATING REGISTRATION PAGE//
+
+For connecting Db with phpMyAdmin
+firstly open in browser http://localhost/phpmyadmin/index.php?route=/server/sql
+type user id=root
+password=(here it will be blank)
+
+next create a database for example we are creating a db frontendbackend .
+now inside it create a table we are creating a table named admin.
+
+next add some column names and their datatypes.
+
+next now inside of our project folder create a database folder of and inside it create a file named config.php.
+
+inside of it write like this:
+
+<?php
+$con=mysqli_connect("localhost",username_of_db("root"),password_of_db(""),) or die("Unable to connect to db");
+mysqli_select_db($con,name_of_db_created_in_phpMyAdmin("frontendbackend"));
+
+
+?>
+
+
+And now inside of our index.php file write this below code:
+<?php 
+require path_to_our_config_file"database/config.php";
+?>
+
+
+Similarly we will create a file named register.php and will paste the whole code of index.php file and will do some
+necessary editing.
+
+
+Next for connecting the login page, inside of index.php 
+below closing of html tag,we will start writing php cmd.
+
+
+<?php
+
+//We have two types of methods mainly:GET(used for fetching data),POST(used for posting data) we are using SignIn which we have used as name in login html tag//
+
+if(isset($_POST['SignIn'])){
+//As we are geeting username input from the user
+	$username=$_POST['username'];
+
+//As we are geeting username input from the user
+	$password=$_POST['password'];
+
+//next we are writing query in which we are first selecting all columns and then adding a condition for selecting particular username($username) having password ($password).
+
+	$query1="select * from admin where username='$username' AND password='$password'";
+
+//For running query we will use $runquery and inside we will give the variable name given to database sqli file i.e. $con and $query1.
+
+	$runquery1=mysqli_query($con,$query1);
+
+//Here as we run our query then the below if condition will check our table and if it finds rows > 0 then it will go inside.
+
+
+	if(mysqli_num_rows($runquery1)>0){
+
+//From the below line we will be redirected to the page 
+Mainpage.php .
+
+		header('location:Mainpage.php');
+		$_SESSION['username']=$username;
+	}
+	else{
+
+ //This will give a popup message to the user
+		echo'<script>alert("Invalid username and password")</script>';
+	}
+}
+?>
+
+
+
+
+
+
+
+//SECTION 4(Not of much notes)
+//CONNECTING DATABASE WITH REGISTRATION PAGE AND INSERTING DATA INTO DATABASE//
+
+Now inside of register.php file we will write code below closing of html code.
+
+<?php
+if(isset($_POST['Register'])){
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$img=$_FILES['img1']['name'];
+	$temp_name=$_FILES['img1']['tmp_name'];
+	$filepath="admin/$img";
+	move_uploaded_file($temp_name,$filepath);
+	$query2="insert into admin (username,password,img) values('$username','$password','$img')";
+	$runquery2=mysqli_query($con,$query2);
+	if($runquery2){
+		echo'<script>alert("Account has been register")</script>';
+	}
+}
+
+
+?>
+
+
+**Section 5: How To Extract Data from Database using PHP and show it on Front Page**
+Now we will create a new file mainpage.php
+
+inside it we will
+firstly copy the above code till head and next we will
+
+next inside index.php page in the bottom code below header code , we will write
+$_SESSION['username']=$username;
+//Also see below code for reference:
+
+if(isset($_POST['SignIn'])){
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$query1="select * from admin where username='$username' AND password='$password'";
+	$runquery1=mysqli_query($con,$query1);
+	if(mysqli_num_rows($runquery1)>0){
+		header('location:Mainpage.php');
+		$_SESSION['username']=$username;
+	}
+
+Also in the start of the code in index.php and mainpage.php , we will add this thing in starting php code:session_start();
+
+full code for reference:
+<?php
+require 'database/config.php';
+session_start();
+?>
+
+
+//Now as our session got started and as we have linked our mainpage with db now we will put an if condition inside the mainpage:
+<?php
+if(isset($_SESSION['username']))
+{
+if(isset($_SESSION['username'])){
+	$firstname=$_SESSION['firstname'];
+	$lastname=$_SESSION['lastname'];
+
+
+//THE USERNAME WHICH HAS LOGGED IN HAS BEEN STORED INSIDE $_SESSION['username']
+	$username=$_SESSION['username'];
+
+
+//FIRSTLY WE ARE FETCHING ALL DATA FROM TABLE admin AND THEN FETCHING DATA FOR A PARTICULAR USERNAME BY DEFINING WITH A WHERE CONDITION AND SPECIFYING IT WITH USERNAME 
+	$query13="select * from admin where username='$username'";
+
+
+//WE WILL RUN ABOVE QUERY BY RUNNING THE BELOW CMD.
+	$runquery13=mysqli_query($con,$query13);
+    $rowdata=mysqli_fetch_array($runquery13);
+
+
+//SO THE DATA WE WANT SHOULD BE WRITTEN LIKE THE BELOW LINE AFTER FETCHING OF DATA
+	$username=$rowdata['username'];
+	$img=$rowdata['img'];
+    	echo "<table>
+	<tr>
+	<td>Image</td>
+
+
+//WHEN FETCHING AN IMAGE OR ANY DATA KEEP IN MIND TO ADD TAG AS PER HTML NORMS AND ADD CORRECT PATH LIKE IN BELOW CMD SRC IS INSIDE OF ADMIN FOLDER SO IT HAS SELECTED ADMIN FOLDER ALSO//
+	<td><img src='admin/$img'/></td>
+	</tr>
+	<tr>
+	<td>Username</td>
+	<td>$username</td>
+	</tr>
+	</table>";
+
+}
+else{
+	echo "Welcome admin";
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
